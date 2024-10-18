@@ -8,15 +8,19 @@ import os
 from def_common import *
 
 def func(x):
-    if (x[0]=='echo'):
+    if (x[0]=='shell'):
         delay = random.randint(1, 9)/10
         time.sleep(delay)
         
-        cmd = ' '.join(x)
+        cmd = ' '.join(x[1:])
         # print(cmd)
         os.system(f'{cmd} , delay = {delay}')
+    elif (x[0]=='script'):
+        pass
+    elif (x[0]=='python'):
+        pass
     else:
-        print('Error :: command not found !')
+        print('Error :: command type not found !')
 
 if __name__== '__main__':
     files_to_include = ['sim.py']
