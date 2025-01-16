@@ -1,4 +1,4 @@
-list_run = set()
+list_run = []
 
 def def_run(cmd_type, *args):
     test = {}

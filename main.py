@@ -8,11 +8,11 @@ import os
 from def_common import *
 
 def func(x):
-    if (x[0]=='shell'):
+    if (x['cmd_type']=='shell'):
         delay = random.randint(1, 9)/10
         time.sleep(delay)
         
-        cmd = ' '.join(x[1:])
+        cmd = ' '.join(x['cmd_opt'])
         # print(cmd)
         os.system(f'{cmd} , delay = {delay}')
     elif (x[0]=='script'):
@@ -31,7 +31,7 @@ if __name__== '__main__':
 
     # print(list_run)
     # for i in list_run:
-    #     print(i[1:])
+    #     print(i['cmd_opt'][1:])
 
     # 1. for loop
     for item in list_run:
